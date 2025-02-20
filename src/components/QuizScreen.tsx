@@ -65,6 +65,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({
       ws.send(JSON.stringify({ action: "displayImage", level: currentLevel }));
     } else {
       playIncorrect();
+      ws.send(JSON.stringify({ action: "incorrect", level: currentLevel }));
     }
 
     // Wait for the sound to play
